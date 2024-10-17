@@ -31,6 +31,8 @@ function TodoTaskList({ taskList }: TodoTaskListProps) {
         };
         return [newtask, ...taskList];
       });
+    }else{
+      window.alert("Empty task can't be added to the list.")
     }
   };
 

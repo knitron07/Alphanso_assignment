@@ -6,6 +6,7 @@ import Button from "../Common/Button";
 import { StyledButton } from "../../Styled/Common/Button.styled";
 import { TaskContex } from "../Utility/TaskContext";
 import { TaskObject } from "../TodoTaskList/Task.type";
+import { debounce } from "../Utility/Utility";
 type AppbarProps = {
   tiggerFilter: (filter: Filter) => void;
   resetFilter?: () => void;
@@ -32,7 +33,7 @@ function AppBar({ tiggerFilter }: AppbarProps) {
   const getQueryValue = (query: string) => {
     setFilter({ ...filter, search: query });
   };
-
+  const depouncedGetQueryValue = debounce(getQueryValue,1000)
   const onFilterButtonClick = (buttonFilter: ButtonFilterType) => {
     setFilter({ ...filter, buttonFilter: buttonFilter });
   };
@@ -74,7 +75,7 @@ function AppBar({ tiggerFilter }: AppbarProps) {
         <Text variant="h4">Today</Text>
         <SearchBar
           placeHolder="Search"
-          getQueryValue={getQueryValue}
+          getQueryValue={depouncedGetQueryValue}
           inputRef={searchBarRef}
         />
         <FilterButtonWrapper>
@@ -105,7 +106,7 @@ function AppBar({ tiggerFilter }: AppbarProps) {
               onFilterButtonClick("Incomplete");
             }}
           />
-          {prevFinalTaskList && (
+          {/* {prevFinalTaskList && (
             <StyledButton
               className={`${
                 !haveSameIds(prevFinalTaskList, taskList)
@@ -117,7 +118,7 @@ function AppBar({ tiggerFilter }: AppbarProps) {
                 setTaskList(prevFinalTaskList);
               }}
             />
-          )}
+          )} */}
         </FilterButtonWrapper>
       </AppBarWrapper>
     </>
