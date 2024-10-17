@@ -62,7 +62,7 @@ function TodoCard({ id, isCompleted = false, todoText }: TodoCardProps) {
             <CircleOutlinedIcon fontSize="small" />
           )}
         </CustomListItemIcon>
-        <Text>{todoText}</Text>
+        <Text className="font-base">{todoText}</Text>
       </CustomListItem>
     </OutlineCardWrapper>
   );
