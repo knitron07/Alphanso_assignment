@@ -2,8 +2,11 @@ import React, { useContext, useState } from "react";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
-import { CustomListItem, OutlineCardWrapper } from "../Styled/CustomListItem";
-import { CustomIconButton, CustomListItemIcon } from "../Styled/IconStyles";
+import {
+  CustomListItem,
+  OutlineCardWrapper,
+} from "../../Styled/CustomListItem";
+import { CustomIconButton, CustomListItemIcon } from "../../Styled/IconStyles";
 import { TaskContex } from "../Utility/TaskContext";
 import { TaskObject } from "./Task.type";
 

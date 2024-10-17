@@ -16,7 +16,7 @@ export const OutlineCardWrapper = styled("div")<CustomListItemProps>(
       backgroundColor: `${isCompleted ? "#e8f3e1" : "#ffffff"}`,
       borderRadius: "6px",
       height: "44px",
-      width: "100%",
+      width: "calc(100% - 2px)",
       ":hover": {
         backgroundColor: "#e8f3e1",
       },

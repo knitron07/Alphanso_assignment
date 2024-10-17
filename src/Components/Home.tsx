@@ -3,9 +3,10 @@ import TodoTaskList from "./TodoTaskList/TodoTaskList";
 import { TaskContex } from "./Utility/TaskContext";
 import AppBar, { Filter } from "./AppBar/AppBar";
 import { TaskObject } from "./TodoTaskList/Task.type";
+import { HomeWrapper } from "../Styled/HomeWrapper";
 
 function Home() {
-  const { taskList, setTaskList } = useContext(TaskContex);
+  const { taskList } = useContext(TaskContex);
   const [finalTaskList, setFinaltaskList] = useState([...taskList]);
   const filterTask = (filter: Filter) => {
     const allTaskList = [...taskList];
@@ -28,10 +29,10 @@ function Home() {
     setFinaltaskList(taskList);
   }, [taskList]);
   return (
-    <>
+    <HomeWrapper>
       <AppBar tiggerFilter={filterTask} />
       <TodoTaskList taskList={finalTaskList} />
-    </>
+    </HomeWrapper>
   );
 }
 

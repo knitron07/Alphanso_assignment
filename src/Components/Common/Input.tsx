@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, HtmlHTMLAttributes } from "react";
 
-type InputProps = {
+export type InputProps = {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   inputRef?: React.RefObject<HTMLInputElement>;

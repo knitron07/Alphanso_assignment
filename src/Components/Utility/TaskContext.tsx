@@ -7,6 +7,7 @@ import {
   useState,
 } from "react";
 import { TaskObject } from "../TodoTaskList/Task.type";
+import { defalutTaskList } from "./Constant";
 
 type TaskContextType = {
   taskList: TaskObject[];
@@ -19,9 +20,10 @@ type TaskContextProps = {
 export const TaskContex = createContext<TaskContextType>({} as TaskContextType);
 
 function TaskContextProvider({ children }: TaskContextProps) {
-  const taskList: TaskObject[] =
-    (JSON.parse(localStorage.getItem("taskList") || "[]") as TaskObject[]) ||
-    [];
+  let taskList: TaskObject[] = JSON.parse(
+    localStorage.getItem("taskList") || "[]"
+  ) as TaskObject[];
+  taskList = taskList.length ? taskList : defalutTaskList;
   const [tList, setTList] = useState<TaskObject[]>(taskList);
   const storeTaskListInLocalStorage = () => {
     console.log(tList);

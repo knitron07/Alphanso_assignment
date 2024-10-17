@@ -1,9 +1,13 @@
-type ButtonProps = {
+export type ButtonProps = {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   label: string;
-};
-function Button({ onClick, label }: ButtonProps) {
-  return <button onClick={(e) => onClick(e)}>{label}</button>;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+function Button({ onClick, label, ...rest }: ButtonProps) {
+  return (
+    <button onClick={(e) => onClick(e)} {...rest}>
+      {label}
+    </button>
+  );
 }
 
 export default Button;

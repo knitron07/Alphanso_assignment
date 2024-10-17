@@ -1,4 +1,4 @@
-import { CustomList } from "../Styled/CustomList";
+import { CustomList } from "../../Styled/CustomList";
 import { TodoTaskListProps } from "./Task.type";
 import TodoCard from "./TodoCard";
 
