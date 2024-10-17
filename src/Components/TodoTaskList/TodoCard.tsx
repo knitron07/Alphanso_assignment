@@ -9,6 +9,7 @@ import {
 import { CustomIconButton, CustomListItemIcon } from "../../Styled/IconStyles";
 import { TaskContex } from "../Utility/TaskContext";
 import { TaskObject } from "./Task.type";
+import { Text } from "../../Styled/Common/Text";
 
 type TodoCardProps = {
   id: number;
@@ -61,7 +62,7 @@ function TodoCard({ id, isCompleted = false, todoText }: TodoCardProps) {
             <CircleOutlinedIcon fontSize="small" />
           )}
         </CustomListItemIcon>
-        {todoText}
+        <Text>{todoText}</Text>
       </CustomListItem>
     </OutlineCardWrapper>
   );
